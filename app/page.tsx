@@ -48,7 +48,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
       <section
         className="hero"
         style={{
@@ -105,7 +104,6 @@ export default function Home() {
         />
       </section>
 
-      {/* SECOND HERO / SERVICES */}
       <section
         className="services"
         style={{
@@ -113,12 +111,6 @@ export default function Home() {
           overflow: "hidden",
           isolation: "isolate",
           minHeight: "720px",
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          alignItems: "center",
-          gap: "30px",
-          padding: "140px 80px",
-          background: "#0b0f19",
           marginTop: "-70px",
           zIndex: 1,
         }}
@@ -212,7 +204,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
       <section
         className={`cta ${loaded ? "fade-up" : ""}`}
         style={{
