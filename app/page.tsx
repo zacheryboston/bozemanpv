@@ -96,11 +96,6 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 150);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <main className={`page ${loaded ? "page-loaded" : ""}`}>
       <div className="page-glow page-glow-one" />
