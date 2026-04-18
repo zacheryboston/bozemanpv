@@ -65,6 +65,36 @@ const process = [
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoaded(true), 150);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 20) {
+        setShowHeader(true);
+      } else if (currentScrollY < lastScrollY) {
+        setShowHeader(true);
+      } else {
+        setShowHeader(false);
+        setMenuOpen(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 150);
@@ -77,53 +107,50 @@ export default function Home() {
       <div className="page-glow page-glow-two" />
       <div className="grid-lines" />
 
-      <header className="site-header">
-        <a href="#top" className="brand" aria-label="BozemanPV home">
-          <div className="brand-nav-lockup">
-            <div className="brand-nav-mark">
-              <Image
-                src="/BPBP.png"
-                alt="BozemanPV mark"
-                fill
-                sizes="46px"
-                className="brand-nav-mark-image"
-                priority
-              />
-            </div>
+<header className={`site-header ${showHeader ? "visible" : "hidden"} ${menuOpen ? "menu-open" : ""}`}>
+  <button
+    className="menu-toggle"
+    type="button"
+    aria-label="Toggle menu"
+    aria-expanded={menuOpen}
+    onClick={() => setMenuOpen((prev) => !prev)}
+  >
+    <span />
+    <span />
+    <span />
+  </button>
 
-            <div className="brand-nav-wordmark">
-              <Image
-                src="/logoheaderVECTOR.svg"
-                alt="Bozeman Performance Ventures"
-                fill
-                sizes="(max-width: 640px) 170px, (max-width: 920px) 210px, 250px"
-                className="brand-header-image"
-                priority
-              />
-            </div>
-          </div>
-        </a>
+<a href="#top" className="brand-center" aria-label="BozemanPV home">
+  <Image
+    src="/BPBP.png"
+    alt="BozemanPV mark"
+    width={180}
+    height={70}
+    className="brand-nav-mark-image"
+    priority
+  />
+</a>
 
-        <nav className="nav">
-          <a href="#profile">Profile</a>
-          <a href="#services">Services</a>
-          <a href="#approach">Approach</a>
-          <a href="#results">Results</a>
-          <a href="/testimonials" className="nav-pill">
-            Testimonials
-          </a>
-          <a href="#contact">Contact</a>
-        </nav>
+  <a
+    href="https://stephen-bozeman.clientsecure.me"
+    target="_blank"
+    rel="noreferrer"
+    className="header-cta"
+  >
+    Schedule
+  </a>
 
-        <a
-          href="https://stephen-bozeman.clientsecure.me"
-          target="_blank"
-          rel="noreferrer"
-          className="header-cta"
-        >
-          Schedule Online
-        </a>
-      </header>
+  <nav className={`dropdown-nav ${menuOpen ? "open" : ""}`}>
+    <a href="#profile" onClick={() => setMenuOpen(false)}>Profile</a>
+    <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+    <a href="#approach" onClick={() => setMenuOpen(false)}>Approach</a>
+    <a href="#results" onClick={() => setMenuOpen(false)}>Results</a>
+    <a href="/testimonials" className="nav-pill" onClick={() => setMenuOpen(false)}>
+      Testimonials
+    </a>
+    <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+  </nav>
+</header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
@@ -201,135 +228,135 @@ export default function Home() {
         <div className="trust-line" />
       </section>
 
-      <section className="profile section" id="profile">
-        <div className="section-heading profile-heading reveal reveal-1">
-          <span className="section-kicker">Professional Profile</span>
-          <h2>Training, experience, and applied expertise.</h2>
+<section className="profile-section" id="profile">
+<div className="profile-section-bg-mark" aria-hidden="true">
+  <div className="profile-section-bg-mark-inner">
+    <Image
+      src="/BP_VECTOR.svg"
+      alt=""
+      fill
+      sizes="100vw"
+      className="profile-section-bg-mark-image"
+    />
+  </div>
+</div>
+
+  <div className="profile-shell">
+    <div className="profile-heading">
+      <span className="section-kicker section-kicker-dark">Professional Profile</span>
+      <h2>Training, experience, and applied expertise.</h2>
+      <p>
+        A background built across psychology, sport and performance consulting,
+        executive function coaching, and real-world applied accountability.
+      </p>
+    </div>
+
+    <div className="profile-main-card">
+      <div className="profile-main-top">
+        <div className="profile-main-identity">
+          <h3>Stephen W. Bozeman</h3>
+          <p className="profile-main-role">Founder & Owner</p>
+          <span className="profile-main-badge">
+            Certified Mental Performance Consultant®
+          </span>
+        </div>
+
+        <div className="profile-main-stats">
+          <div className="profile-stat-pill">
+            <span>Focus Areas</span>
+            <strong>Sport & Performance Psychology / Executive Function</strong>
+          </div>
+          <div className="profile-stat-pill">
+            <span>Populations</span>
+            <strong>Neurodiverse clients, athletes, academia, executives</strong>
+          </div>
+          <div className="profile-stat-pill">
+            <span>Based In</span>
+            <strong>Houston, Texas</strong>
+          </div>
+        </div>
+      </div>
+
+      <div className="profile-credits-wrap">
+  <Image
+    src="/credits.png"
+    alt="Professional affiliations and credentials"
+    width={1200}
+    height={180}
+    className="profile-credits-image"
+  />
+</div>
+
+      <div className="profile-main-grid">
+        <div className="profile-info-block">
+          <span className="profile-info-label">Education</span>
           <p>
-            A background built across psychology, sport and performance
-            consulting, executive function coaching, and real-world applied
-            accountability.
+            Stephen Bozeman holds a Bachelor of Science in Psychology with a
+            minor in Applied Statistics, Summa Cum Laude, and a Master of Arts
+            in Applied Sports and Performance Psychology from the University of
+            St. Thomas in Houston, Texas.
           </p>
         </div>
 
-        <div className="profile-modern-grid">
-          <article className="profile-identity-card reveal reveal-2">
-            <div className="profile-identity-top">
-              <div className="profile-mark-wrap">
-                <Image
-                  src="/BP_VECTOR.svg"
-                  alt=""
-                  fill
-                  sizes="84px"
-                  className="profile-mark-image"
-                />
-              </div>
-
-              <div>
-                <span className="profile-badge">
-                  Certified Mental Performance Consultant®
-                </span>
-                <h3>Stephen W. Bozeman</h3>
-                <p className="profile-role">Founder & Owner</p>
-              </div>
-            </div>
-
-            <div className="profile-stat-stack">
-              <div className="profile-stat">
-                <span className="profile-stat-label">Focus Areas</span>
-                <strong>
-                  Sport & Performance Psychology
-                  <br />
-                  Executive Function
-                </strong>
-              </div>
-
-              <div className="profile-stat">
-                <span className="profile-stat-label">Populations</span>
-                <strong>
-                  Neurodiverse clients, athletes, academia, executives
-                </strong>
-              </div>
-
-              <div className="profile-stat">
-                <span className="profile-stat-label">Based In</span>
-                <strong>Houston, Texas</strong>
-              </div>
-            </div>
-          </article>
-
-          <div className="profile-copy-stack">
-            <article className="profile-copy-card reveal reveal-3">
-              <span className="profile-card-kicker">Education</span>
-              <p>
-                Stephen Bozeman holds a Bachelor of Science in Psychology with a
-                minor in Applied Statistics, Summa Cum Laude, and a Master of
-                Arts in Applied Sports and Performance Psychology from the
-                University of St. Thomas in Houston, Texas.
-              </p>
-            </article>
-
-            <article className="profile-copy-card reveal reveal-3">
-              <span className="profile-card-kicker">Credentials</span>
-              <p>
-                Stephen maintains the Association for Applied Sport
-                Psychology&apos;s Certified Mental Performance Consultant®
-                accreditation by the National Commission for Certifying Agencies
-                and is a member of AASP and the American Psychological
-                Association.
-              </p>
-            </article>
-
-            <article className="profile-copy-card reveal reveal-4">
-              <span className="profile-card-kicker">Mentorship & Foundation</span>
-              <p>
-                Stephen was mentored by Dr. Lennie Waite of Waite Performance
-                Strategies in Houston, Texas and employed by Tracy Markle, MA
-                and Dr. Nicole Hipp of Collegiate Coaching Services in Boulder,
-                Colorado before starting Bozeman Performance Ventures in 2023.
-              </p>
-            </article>
-
-            <article className="profile-copy-card reveal reveal-4">
-              <span className="profile-card-kicker">Applied Expertise</span>
-              <p>
-                His areas of expertise are sport and performance psychology and
-                executive function. Stephen has extensive experience working with
-                neurodiverse individuals, youth and adult competitive sport
-                populations, and academia. In addition, he coaches current and
-                retired business executives of large companies who seek personal
-                accountability in pursuit of their goals inside and outside of
-                the office.
-              </p>
-            </article>
-
-            <article className="profile-copy-card reveal reveal-5">
-              <span className="profile-card-kicker">Coaching Presence</span>
-              <p>
-                Stephen holds a seasonal cross country coaching position at St.
-                John&apos;s School in Houston, Texas where he motivates his
-                athletes to keep their eyes up and frame obstacles as
-                opportunities. He takes pride in running alongside his athletes
-                during their day-to-day training as he believes being on the
-                ground floor in his community is essential to connecting with,
-                understanding, and encouraging the next generation of athletes
-                and world leaders.
-              </p>
-            </article>
-
-            <article className="profile-copy-card reveal reveal-5">
-              <span className="profile-card-kicker">Personal</span>
-              <p>
-                Stephen is a Houston native and lives in Kingwood with his two
-                daughters and wife. When he is not engaging in what he considers
-                meaningful work at BPV, spending time with his family,
-                traveling, or confronting a physical challenge is where you will
-                find him.
-              </p>
-            </article>
-          </div>
+        <div className="profile-info-block">
+          <span className="profile-info-label">Credentials</span>
+          <p>
+            Stephen maintains the Association for Applied Sport
+            Psychology&apos;s Certified Mental Performance Consultant®
+            accreditation by the National Commission for Certifying Agencies and
+            is a member of AASP and the American Psychological Association.
+          </p>
         </div>
-      </section>
+
+        <div className="profile-info-block">
+          <span className="profile-info-label">Mentorship & Foundation</span>
+          <p>
+            Stephen was mentored by Dr. Lennie Waite of Waite Performance
+            Strategies in Houston, Texas and employed by Tracy Markle, MA and
+            Dr. Nicole Hipp of Collegiate Coaching Services in Boulder,
+            Colorado before starting Bozeman Performance Ventures in 2023.
+          </p>
+        </div>
+
+        <div className="profile-info-block">
+          <span className="profile-info-label">Applied Expertise</span>
+          <p>
+            His areas of expertise are sport and performance psychology and
+            executive function. Stephen has extensive experience working with
+            neurodiverse individuals, youth and adult competitive sport
+            populations, and academia. In addition, he coaches current and
+            retired business executives of large companies who seek personal
+            accountability in pursuit of their goals inside and outside of the
+            office.
+          </p>
+        </div>
+
+        <div className="profile-info-block">
+          <span className="profile-info-label">Coaching Presence</span>
+          <p>
+            Stephen holds a seasonal cross country coaching position at St.
+            John&apos;s School in Houston, Texas where he motivates his athletes
+            to keep their eyes up and frame obstacles as opportunities. He takes
+            pride in running alongside his athletes during their day-to-day
+            training as he believes being on the ground floor in his community
+            is essential to connecting with, understanding, and encouraging the
+            next generation of athletes and world leaders.
+          </p>
+        </div>
+
+        <div className="profile-info-block">
+          <span className="profile-info-label">Personal</span>
+          <p>
+            Stephen is a Houston native and lives in Kingwood with his two
+            daughters and wife. When he is not engaging in what he considers
+            meaningful work at BPV, spending time with his family, traveling,
+            or confronting a physical challenge is where you will find him.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="services section" id="services">
         <div className="section-heading reveal reveal-1">
