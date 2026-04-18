@@ -3,6 +3,24 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+const heroServices = [
+  {
+    label: "Executive Function Coaching",
+    value:
+      "For college students who need accountability and support with time management, prioritization, goal setting, task initiation and execution.",
+  },
+  {
+    label: "Sport and Performance Consultation",
+    value:
+      "For athletes and performers facing adversity or seeking elevated levels of performance.",
+  },
+  {
+    label: "Executive Coaching",
+    value:
+      "For seasoned and retired executives pursuing balance within the workplace or during the transition out of it.",
+  },
+];
+
 const services = [
   {
     title: "Executive Function Coaching",
@@ -30,39 +48,18 @@ const outcomes = [
 const process = [
   {
     step: "01",
-    title: "Assess the friction",
-    text: "We identify what is breaking execution: attention drift, overload, inconsistent systems, weak boundaries, or poor recovery.",
+    title: "Understand",
+    text: "We build a foundation for liftoff by thoroughly understanding the client's unique goals and challenges.",
   },
   {
     step: "02",
-    title: "Build the structure",
-    text: "We create an operating system around your real life so you can think clearly, execute consistently, and stop relying on last-minute effort.",
+    title: "Collaborate",
+    text: "We create an alliance to develop a system that suits the client's individual personal, professional, and performance profile.",
   },
   {
     step: "03",
-    title: "Strengthen performance",
-    text: "We refine the habits, mindset, and accountability required to sustain high output without burning yourself down.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Stephen brings a rare combination of calm, insight, and structure. The work helped me become more intentional, more focused, and far more effective in how I lead and operate.",
-    name: "Leadership Client",
-    role: "Executive Coaching",
-  },
-  {
-    quote:
-      "This was not surface-level coaching. It helped me understand how I was getting in my own way and gave me practical tools I could actually use every week.",
-    name: "Professional Client",
-    role: "Executive Function Coaching",
-  },
-  {
-    quote:
-      "What stood out most was the balance between empathy and accountability. I left sessions with clarity, direction, and something concrete to execute.",
-    name: "Performance Client",
-    role: "High-Performance Coaching",
+    title: "Implement",
+    text: "In addition to expertise and accountability, we monitor and refine support by measuring performance indicators such as process goals or adversity reactions, both of which naturally result from progress.",
   },
 ];
 
@@ -82,25 +79,39 @@ export default function Home() {
 
       <header className="site-header">
         <a href="#top" className="brand" aria-label="BozemanPV home">
-          <div className="brand-mark">
-            <Image
-              src="/bplogo.png"
-              alt="BozemanPV logo"
-              fill
-              className="brand-logo"
-              priority
-            />
-          </div>
-          <div className="brand-copy">
-            <span className="brand-name">BozemanPV</span>
-            <span className="brand-subtitle">Executive Function Coaching</span>
+          <div className="brand-nav-lockup">
+            <div className="brand-nav-mark">
+              <Image
+                src="/BPBP.png"
+                alt="BozemanPV mark"
+                fill
+                sizes="46px"
+                className="brand-nav-mark-image"
+                priority
+              />
+            </div>
+
+            <div className="brand-nav-wordmark">
+              <Image
+                src="/logoheaderVECTOR.svg"
+                alt="Bozeman Performance Ventures"
+                fill
+                sizes="(max-width: 640px) 170px, (max-width: 920px) 210px, 250px"
+                className="brand-header-image"
+                priority
+              />
+            </div>
           </div>
         </a>
 
         <nav className="nav">
+          <a href="#profile">Profile</a>
           <a href="#services">Services</a>
           <a href="#approach">Approach</a>
           <a href="#results">Results</a>
+          <a href="/testimonials" className="nav-pill">
+            Testimonials
+          </a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -126,9 +137,9 @@ export default function Home() {
           </h1>
 
           <p className="hero-text reveal reveal-3">
-            Coaching for professionals, founders, and high performers who want
-            sharper focus, better execution, and a more stable way to operate at
-            a high level.
+            Coaching for professionals, founders, athletes, and high performers
+            who want sharper focus, better execution, and a more stable way to
+            operate at a high level.
           </p>
 
           <div className="hero-actions reveal reveal-4">
@@ -146,43 +157,37 @@ export default function Home() {
           </div>
 
           <div className="hero-metrics reveal reveal-5">
-            <div className="metric-card">
-              <span className="metric-label">Focus</span>
-              <span className="metric-value">Clearer thinking</span>
-            </div>
-            <div className="metric-card">
-              <span className="metric-label">Execution</span>
-              <span className="metric-value">Stronger follow-through</span>
-            </div>
-            <div className="metric-card">
-              <span className="metric-label">Performance</span>
-              <span className="metric-value">Sustainable output</span>
-            </div>
+            {heroServices.map((item) => (
+              <div className="metric-card" key={item.label}>
+                <span className="metric-label">{item.label}</span>
+                <span className="metric-value">{item.value}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="hero-visual reveal reveal-3">
+          <div className="hero-vector-mark" aria-hidden="true">
+            <Image
+              src="/BP_VECTOR.svg"
+              alt=""
+              fill
+              sizes="(max-width: 1100px) 60vw, 32vw"
+              className="hero-vector-image"
+            />
+          </div>
+
           <div className="portrait-shell">
-            <div className="portrait-orb" />
             <div className="portrait-frame">
               <Image
                 src="/portrait.png"
                 alt="Stephen Bozeman"
                 fill
+                sizes="(max-width: 640px) calc(100vw - 20px), (max-width: 1100px) min(520px, 100vw), 520px"
                 className="portrait-image"
                 priority
               />
             </div>
-          </div>
-
-          <div className="floating-panel floating-panel-top">
-            <span className="floating-label">For high performers</span>
-            <strong>Sharper execution under pressure</strong>
-          </div>
-
-          <div className="floating-panel floating-panel-bottom">
-            <span className="floating-label">Built for real life</span>
-            <strong>Structure, accountability, and sustainable performance</strong>
           </div>
         </div>
       </section>
@@ -194,6 +199,136 @@ export default function Home() {
           <span> They need better execution.</span>
         </p>
         <div className="trust-line" />
+      </section>
+
+      <section className="profile section" id="profile">
+        <div className="section-heading profile-heading reveal reveal-1">
+          <span className="section-kicker">Professional Profile</span>
+          <h2>Training, experience, and applied expertise.</h2>
+          <p>
+            A background built across psychology, sport and performance
+            consulting, executive function coaching, and real-world applied
+            accountability.
+          </p>
+        </div>
+
+        <div className="profile-modern-grid">
+          <article className="profile-identity-card reveal reveal-2">
+            <div className="profile-identity-top">
+              <div className="profile-mark-wrap">
+                <Image
+                  src="/BP_VECTOR.svg"
+                  alt=""
+                  fill
+                  sizes="84px"
+                  className="profile-mark-image"
+                />
+              </div>
+
+              <div>
+                <span className="profile-badge">
+                  Certified Mental Performance Consultant®
+                </span>
+                <h3>Stephen W. Bozeman</h3>
+                <p className="profile-role">Founder & Owner</p>
+              </div>
+            </div>
+
+            <div className="profile-stat-stack">
+              <div className="profile-stat">
+                <span className="profile-stat-label">Focus Areas</span>
+                <strong>
+                  Sport & Performance Psychology
+                  <br />
+                  Executive Function
+                </strong>
+              </div>
+
+              <div className="profile-stat">
+                <span className="profile-stat-label">Populations</span>
+                <strong>
+                  Neurodiverse clients, athletes, academia, executives
+                </strong>
+              </div>
+
+              <div className="profile-stat">
+                <span className="profile-stat-label">Based In</span>
+                <strong>Houston, Texas</strong>
+              </div>
+            </div>
+          </article>
+
+          <div className="profile-copy-stack">
+            <article className="profile-copy-card reveal reveal-3">
+              <span className="profile-card-kicker">Education</span>
+              <p>
+                Stephen Bozeman holds a Bachelor of Science in Psychology with a
+                minor in Applied Statistics, Summa Cum Laude, and a Master of
+                Arts in Applied Sports and Performance Psychology from the
+                University of St. Thomas in Houston, Texas.
+              </p>
+            </article>
+
+            <article className="profile-copy-card reveal reveal-3">
+              <span className="profile-card-kicker">Credentials</span>
+              <p>
+                Stephen maintains the Association for Applied Sport
+                Psychology&apos;s Certified Mental Performance Consultant®
+                accreditation by the National Commission for Certifying Agencies
+                and is a member of AASP and the American Psychological
+                Association.
+              </p>
+            </article>
+
+            <article className="profile-copy-card reveal reveal-4">
+              <span className="profile-card-kicker">Mentorship & Foundation</span>
+              <p>
+                Stephen was mentored by Dr. Lennie Waite of Waite Performance
+                Strategies in Houston, Texas and employed by Tracy Markle, MA
+                and Dr. Nicole Hipp of Collegiate Coaching Services in Boulder,
+                Colorado before starting Bozeman Performance Ventures in 2023.
+              </p>
+            </article>
+
+            <article className="profile-copy-card reveal reveal-4">
+              <span className="profile-card-kicker">Applied Expertise</span>
+              <p>
+                His areas of expertise are sport and performance psychology and
+                executive function. Stephen has extensive experience working with
+                neurodiverse individuals, youth and adult competitive sport
+                populations, and academia. In addition, he coaches current and
+                retired business executives of large companies who seek personal
+                accountability in pursuit of their goals inside and outside of
+                the office.
+              </p>
+            </article>
+
+            <article className="profile-copy-card reveal reveal-5">
+              <span className="profile-card-kicker">Coaching Presence</span>
+              <p>
+                Stephen holds a seasonal cross country coaching position at St.
+                John&apos;s School in Houston, Texas where he motivates his
+                athletes to keep their eyes up and frame obstacles as
+                opportunities. He takes pride in running alongside his athletes
+                during their day-to-day training as he believes being on the
+                ground floor in his community is essential to connecting with,
+                understanding, and encouraging the next generation of athletes
+                and world leaders.
+              </p>
+            </article>
+
+            <article className="profile-copy-card reveal reveal-5">
+              <span className="profile-card-kicker">Personal</span>
+              <p>
+                Stephen is a Houston native and lives in Kingwood with his two
+                daughters and wife. When he is not engaging in what he considers
+                meaningful work at BPV, spending time with his family,
+                traveling, or confronting a physical challenge is where you will
+                find him.
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section className="services section" id="services">
@@ -226,14 +361,18 @@ export default function Home() {
           <div className="approach-left reveal reveal-1">
             <span className="section-kicker">Approach</span>
             <h2>
-              Less noise.
-              <span> More structure, clarity, and follow-through.</span>
+              Goal Oriented Relationships:
+              <span>
+                {" "}
+                Empathy, honesty, and accountability produce measurable
+                results.
+              </span>
             </h2>
             <p>
-              The goal is not just insight. The goal is operational change. This
-              work helps you identify what is interfering with performance and
-              replace it with a system that actually holds up in demanding
-              environments.
+              It&apos;s a built in feature: We know our clients and learn what
+              they&apos;re truly seeking. The client-consultant relationship
+              creates intrinsic value and motivation resilient against extrinsic
+              circumstances.
             </p>
 
             <ul className="outcomes-list">
@@ -269,8 +408,8 @@ export default function Home() {
           <span className="section-kicker">Results</span>
           <h2>What this work is meant to change.</h2>
           <p>
-            Better planning. Better execution. Better self-management.
-            Stronger performance without relying on chaos, overwork, or constant
+            Better planning. Better execution. Better self-management. Stronger
+            performance without relying on chaos, overwork, or constant
             recovery.
           </p>
         </div>
@@ -303,32 +442,6 @@ export default function Home() {
               long-term effectiveness.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="testimonials section">
-        <div className="section-heading reveal reveal-1">
-          <span className="section-kicker">Testimonials</span>
-          <h2>Trusted, thoughtful, and built for real change.</h2>
-          <p>
-            Replace these with your real testimonials when ready. The layout is
-            already set up for them.
-          </p>
-        </div>
-
-        <div className="testimonials-grid">
-          {testimonials.map((item, index) => (
-            <article
-              key={item.name + item.role}
-              className={`testimonial-card reveal reveal-${index + 2}`}
-            >
-              <p className="testimonial-quote">“{item.quote}”</p>
-              <div className="testimonial-meta">
-                <strong>{item.name}</strong>
-                <span>{item.role}</span>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 

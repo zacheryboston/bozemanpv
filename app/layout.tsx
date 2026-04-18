@@ -2,27 +2,28 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BozemanPV | Executive Function Coaching",
+  title: "BozemanPV | Sport Performance & Executive Function Coaching",
   description:
-    "Executive function coaching for professionals, founders, and high performers who need sharper focus, stronger execution, and sustainable performance.",
+    "BozemanPV provides executive function coaching, sport and performance consultation, and executive coaching for professionals, athletes, students, and high performers.",
   keywords: [
     "Executive Function Coaching",
     "Executive Coaching",
-    "Performance Coaching",
+    "Sport Performance Consultation",
+    "Sport Psychology",
     "BozemanPV",
-    "Leadership Coaching",
+    "Performance Coaching",
     "Austin Executive Coach",
     "Houston Executive Coach",
   ],
   openGraph: {
-    title: "BozemanPV | Executive Function Coaching",
+    title: "BozemanPV | Sport Performance & Executive Function Coaching",
     description:
-      "Executive function coaching for professionals, founders, and high performers who need sharper focus, stronger execution, and sustainable performance.",
+      "BozemanPV provides executive function coaching, sport and performance consultation, and executive coaching for professionals, athletes, students, and high performers.",
     url: "https://www.bozemanpv.com",
     siteName: "BozemanPV",
     images: [
       {
-        url: "/bplogo.png",
+        url: "/logoheaderVECTOR.svg",
         width: 1200,
         height: 630,
         alt: "BozemanPV",
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/bplogo.png",
-    shortcut: "/bplogo.png",
-    apple: "/bplogo.png",
+    icon: "/BP_VECTOR.svg",
+    shortcut: "/BP_VECTOR.svg",
+    apple: "/BP_VECTOR.svg",
   },
 };
 
