@@ -287,8 +287,8 @@ button {
 }
 
 .eyebrow,
-.section-kicker,
-.profile-badge {
+.profile-badge,
+.section-kicker {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -300,6 +300,21 @@ button {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-kicker {
+  display: block;
+  margin: 0 0 14px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: #a5b683;
+  font-size: clamp(2.8rem, 4.8vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
   text-transform: uppercase;
 }
 
@@ -510,12 +525,13 @@ button {
 .section-heading h2,
 .approach-left h2,
 .cta-panel h2 {
-  margin: 18px 0 16px;
-  font-size: clamp(2.4rem, 5vw, 4.15rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  margin: 0 0 16px;
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   color: #f3faf4;
   font-weight: 400;
+  max-width: 900px;
 }
 
 .section-heading p,
@@ -1070,7 +1086,8 @@ button {
 .section-heading h2,
 .approach-left h2,
 .cta-panel h2 {
-  font-size: clamp(2.25rem, 11vw, 3.15rem);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.05;
 }
 
   .profile-heading h2 {
@@ -1168,5 +1185,65 @@ button {
   .profile-credential-logo {
     width: 140px;
     height: 64px;
+  }
+}
+
+#services .section-kicker,
+#approach .section-kicker,
+#results .section-kicker {
+  display: block;
+  margin: 0 0 14px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #a5b683;
+  font-size: clamp(2.8rem, 4.8vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+#services .section-heading h2,
+#approach .approach-left h2,
+#results .section-heading h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 900px;
+}
+
+#contact .section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(165, 182, 131, 0.14);
+  background: rgba(19, 36, 27, 0.72);
+  color: #c4d4a6;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  #services .section-kicker,
+  #approach .section-kicker,
+  #results .section-kicker {
+    font-size: clamp(2rem, 9vw, 3rem);
+    margin-bottom: 10px;
+  }
+
+  #services .section-heading h2,
+  #approach .approach-left h2,
+  #results .section-heading h2 {
+    font-size: clamp(1.35rem, 5vw, 1.9rem);
+    line-height: 1.1;
   }
 }
