@@ -122,6 +122,7 @@ export default function Home() {
     width={180}
     height={70}
     className="brand-nav-mark-image"
+    style={{ height: "auto" }}
     priority
   />
 </a>
@@ -237,14 +238,6 @@ export default function Home() {
 </div>
 
   <div className="profile-shell">
-    <div className="profile-heading">
-      <span className="section-kicker section-kicker-dark">Professional Profile</span>
-      <h2>Training, experience, and applied expertise.</h2>
-      <p>
-        A background built across psychology, sport and performance consulting,
-        executive function coaching, and real-world applied accountability.
-      </p>
-    </div>
 
     <div className="profile-main-card">
       <div className="profile-main-top">
@@ -267,19 +260,93 @@ export default function Home() {
           </div>
           <div className="profile-stat-pill">
             <span>Based In</span>
-            <strong>Houston, Texas</strong>
+            <strong>Houston, TX | Currently serving clients virtually across every U.S. time zone</strong>
           </div>
         </div>
       </div>
 
-      <div className="profile-credits-wrap">
+<div className="profile-credentials-marquee">
+  <div className="profile-credentials-track">
+<div className="profile-credential-logo">
   <Image
-    src="/credits.png"
-    alt="Professional affiliations and credentials"
-    width={1200}
-    height={180}
-    className="profile-credits-image"
+    src="/APA.png"
+    alt="APA"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
   />
+</div>
+
+<div className="profile-credential-logo">
+  <Image
+    src="/AASP.png"
+    alt="AASP"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
+  />
+</div>
+
+<div className="profile-credential-logo">
+  <Image
+    src="/CMPC.png"
+    alt="CMPC"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
+  />
+</div>
+
+<div className="profile-credential-logo">
+  <Image
+    src="/NCCA.png"
+    alt="NCCA"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
+  />
+</div>
+
+<div className="profile-credential-logo">
+  <Image
+    src="/APA.png"
+    alt="APA"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
+  />
+</div>
+
+<div className="profile-credential-logo">
+  <Image
+    src="/AASP.png"
+    alt="AASP"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
+  />
+</div>
+
+<div className="profile-credential-logo">
+  <Image
+    src="/CMPC.png"
+    alt="CMPC"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
+  />
+</div>
+
+<div className="profile-credential-logo">
+  <Image
+    src="/NCCA.png"
+    alt="NCCA"
+    fill
+    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
+    className="profile-credential-image"
+  />
+</div>
+  </div>
 </div>
 
       <div className="profile-main-grid">
