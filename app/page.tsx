@@ -248,7 +248,15 @@ export default function Home() {
             Certified Mental Performance Consultant®
           </span>
         </div>
-
+<div className="profile-extra-headshot">
+  <Image
+    src="/extraheadshot.jpeg"
+    alt="Stephen Bozeman additional headshot"
+    width={640}
+    height={800}
+    className="profile-extra-headshot-image"
+  />
+</div>
         <div className="profile-main-stats">
           <div className="profile-stat-pill">
             <span>Focus Areas</span>
