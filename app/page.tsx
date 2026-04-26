@@ -21,48 +21,6 @@ const heroServices = [
   },
 ];
 
-const services = [
-  {
-    title: "Executive Function Coaching",
-    text: "For professionals who need stronger follow-through, better planning, cleaner prioritization, and more consistent execution under pressure.",
-  },
-  {
-    title: "Performance Psychology",
-    text: "For leaders, athletes, and high performers who want to improve confidence, composure, mental resilience, and performance consistency.",
-  },
-  {
-    title: "High-Accountability Support",
-    text: "Structured guidance built around real-life demands, with practical tools that help translate insight into action.",
-  },
-];
-
-const outcomes = [
-  "Stronger focus in high-demand environments",
-  "Better prioritization and time management",
-  "Improved follow-through and consistency",
-  "Reduced overwhelm and mental clutter",
-  "Clearer decision-making under pressure",
-  "A more sustainable way to perform at a high level",
-];
-
-const process = [
-  {
-    step: "01",
-    title: "Understand",
-    text: "We build a foundation for liftoff by thoroughly understanding the client's unique goals and challenges.",
-  },
-  {
-    step: "02",
-    title: "Collaborate",
-    text: "We create an alliance to develop a system that suits the client's individual personal, professional, and performance profile.",
-  },
-  {
-    step: "03",
-    title: "Implement",
-    text: "In addition to expertise and accountability, we monitor and refine support by measuring performance indicators such as process goals or adversity reactions, both of which naturally result from progress.",
-  },
-];
-
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -102,51 +60,62 @@ export default function Home() {
       <div className="page-glow page-glow-two" />
       <div className="grid-lines" />
 
-<header className={`site-header ${showHeader ? "visible" : "hidden"} ${menuOpen ? "menu-open" : ""}`}>
-  <button
-    className="menu-toggle"
-    type="button"
-    aria-label="Toggle menu"
-    aria-expanded={menuOpen}
-    onClick={() => setMenuOpen((prev) => !prev)}
-  >
-    <span />
-    <span />
-    <span />
-  </button>
+      <header
+        className={`site-header ${showHeader ? "visible" : "hidden"} ${
+          menuOpen ? "menu-open" : ""
+        }`}
+      >
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
 
-<a href="#top" className="brand-center" aria-label="BozemanPV home">
-  <Image
-    src="/BPBP.png"
-    alt="BozemanPV mark"
-    width={180}
-    height={70}
-    className="brand-nav-mark-image"
-    style={{ height: "auto" }}
-    priority
-  />
-</a>
+        <a href="#top" className="brand-center" aria-label="BozemanPV home">
+          <Image
+            src="/BPBP.png"
+            alt="BozemanPV mark"
+            width={180}
+            height={70}
+            className="brand-nav-mark-image"
+            style={{ height: "auto" }}
+            priority
+          />
+        </a>
 
-  <a
-    href="https://stephen-bozeman.clientsecure.me"
-    target="_blank"
-    rel="noreferrer"
-    className="header-cta"
-  >
-    Schedule
-  </a>
+        <a
+          href="https://stephen-bozeman.clientsecure.me"
+          target="_blank"
+          rel="noreferrer"
+          className="header-cta"
+        >
+          Client Portal
+        </a>
 
-  <nav className={`dropdown-nav ${menuOpen ? "open" : ""}`}>
-    <a href="#profile" onClick={() => setMenuOpen(false)}>Profile</a>
-    <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-    <a href="#approach" onClick={() => setMenuOpen(false)}>Approach</a>
-    <a href="#results" onClick={() => setMenuOpen(false)}>Results</a>
-    <a href="/testimonials" className="nav-pill" onClick={() => setMenuOpen(false)}>
-      Testimonials
-    </a>
-    <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-  </nav>
-</header>
+        <nav className={`dropdown-nav ${menuOpen ? "open" : ""}`}>
+          <a href="/about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
+          <a href="/process" onClick={() => setMenuOpen(false)}>
+            Process
+          </a>
+          <a
+            href="/testimonials"
+            onClick={() => setMenuOpen(false)}
+          >
+            Testimonials
+          </a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </a>
+        </nav>
+      </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
@@ -174,7 +143,7 @@ export default function Home() {
             >
               Schedule Consultation
             </a>
-            <a href="#approach" className="btn btn-secondary">
+            <a href="/process" className="btn btn-secondary">
               Explore the Process
             </a>
           </div>
@@ -224,321 +193,40 @@ export default function Home() {
         <div className="trust-line" />
       </section>
 
-<section className="profile-section" id="profile">
-<div className="profile-section-bg-mark" aria-hidden="true">
-  <div className="profile-section-bg-mark-inner">
-    <Image
-      src="/BP_VECTOR.svg"
-      alt=""
-      fill
-      sizes="100vw"
-      className="profile-section-bg-mark-image"
-    />
-  </div>
-</div>
 
-  <div className="profile-shell">
-
-    <div className="profile-main-card">
-      <div className="profile-main-top">
-        <div className="profile-main-identity">
-          <h3>Stephen W. Bozeman</h3>
-          <p className="profile-main-role">Founder & Owner</p>
-          <span className="profile-main-badge">
-            Certified Mental Performance Consultant®
-          </span>
-        </div>
-<div className="profile-extra-headshot">
-  <Image
-    src="/extraheadshot.jpeg"
-    alt="Stephen Bozeman additional headshot"
-    width={640}
-    height={800}
-    className="profile-extra-headshot-image"
-  />
-</div>
-        <div className="profile-main-stats">
-          <div className="profile-stat-pill">
-            <span>Focus Areas</span>
-            <strong>Sport & Performance Psychology / Executive Function</strong>
-          </div>
-          <div className="profile-stat-pill">
-            <span>Populations</span>
-            <strong>Neurodiverse clients, athletes, academia, executives</strong>
-          </div>
-          <div className="profile-stat-pill">
-            <span>Based In</span>
-            <strong>Houston, TX | Currently serving clients virtually across every U.S. time zone</strong>
-          </div>
-        </div>
-      </div>
-
-<div className="profile-credentials-marquee">
-  <div className="profile-credentials-track">
-<div className="profile-credential-logo">
-  <Image
-    src="/APA.png"
-    alt="APA"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-
-<div className="profile-credential-logo">
-  <Image
-    src="/AASP.png"
-    alt="AASP"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-
-<div className="profile-credential-logo">
-  <Image
-    src="/CMPC.png"
-    alt="CMPC"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-
-<div className="profile-credential-logo">
-  <Image
-    src="/NCCA.png"
-    alt="NCCA"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-
-<div className="profile-credential-logo">
-  <Image
-    src="/APA.png"
-    alt="APA"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-
-<div className="profile-credential-logo">
-  <Image
-    src="/AASP.png"
-    alt="AASP"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-
-<div className="profile-credential-logo">
-  <Image
-    src="/CMPC.png"
-    alt="CMPC"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-
-<div className="profile-credential-logo">
-  <Image
-    src="/NCCA.png"
-    alt="NCCA"
-    fill
-    sizes="(max-width: 640px) 140px, (max-width: 980px) 170px, 300px"
-    className="profile-credential-image"
-  />
-</div>
-  </div>
-</div>
-
-      <div className="profile-main-grid">
-        <div className="profile-info-block">
-          <span className="profile-info-label">Education</span>
-          <p>
-            Stephen Bozeman holds a Bachelor of Science in Psychology with a
-            minor in Applied Statistics, Summa Cum Laude, and a Master of Arts
-            in Applied Sports and Performance Psychology from the University of
-            St. Thomas in Houston, Texas.
-          </p>
-        </div>
-
-        <div className="profile-info-block">
-          <span className="profile-info-label">Credentials</span>
-          <p>
-            Stephen maintains the Association for Applied Sport
-            Psychology&apos;s Certified Mental Performance Consultant®
-            accreditation by the National Commission for Certifying Agencies and
-            is a member of AASP and the American Psychological Association.
-          </p>
-        </div>
-
-        <div className="profile-info-block">
-          <span className="profile-info-label">Mentorship & Foundation</span>
-          <p>
-            Stephen was mentored by Dr. Lennie Waite of Waite Performance
-            Strategies in Houston, Texas and employed by Tracy Markle, MA and
-            Dr. Nicole Hipp of Collegiate Coaching Services in Boulder,
-            Colorado before starting Bozeman Performance Ventures in 2023.
-          </p>
-        </div>
-
-        <div className="profile-info-block">
-          <span className="profile-info-label">Applied Expertise</span>
-          <p>
-            His areas of expertise are sport and performance psychology and
-            executive function. Stephen has extensive experience working with
-            neurodiverse individuals, youth and adult competitive sport
-            populations, and academia. In addition, he coaches current and
-            retired business executives of large companies who seek personal
-            accountability in pursuit of their goals inside and outside of the
-            office.
-          </p>
-        </div>
-
-        <div className="profile-info-block">
-          <span className="profile-info-label">Coaching Presence</span>
-          <p>
-            Stephen holds a seasonal cross country coaching position at St.
-            John&apos;s School in Houston, Texas where he motivates his athletes
-            to keep their eyes up and frame obstacles as opportunities. He takes
-            pride in running alongside his athletes during their day-to-day
-            training as he believes being on the ground floor in his community
-            is essential to connecting with, understanding, and encouraging the
-            next generation of athletes and world leaders.
-          </p>
-        </div>
-
-        <div className="profile-info-block">
-          <span className="profile-info-label">Personal</span>
-          <p>
-            Stephen is a Houston native and lives in Kingwood with his two
-            daughters and wife. When he is not engaging in what he considers
-            meaningful work at BPV, spending time with his family, traveling,
-            or confronting a physical challenge is where you will find him.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <section className="services section" id="services">
+      <section className="approach section">
         <div className="section-heading reveal reveal-1">
-          <span className="section-kicker">Services</span>
-          <h2>Precision support for leadership, focus, and performance.</h2>
+          <span className="section-kicker">Process</span>
+          <h2>A cleaner way to understand, collaborate, and execute.</h2>
           <p>
-            Designed for professionals who are capable, driven, and tired of
-            underperforming because their internal systems are overloaded,
-            inconsistent, or unclear.
+            A clear, step-by-step process to diagnose performance gaps,
+            implement practical systems, and create consistent, high-level execution.
           </p>
         </div>
 
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <article
-              key={service.title}
-              className={`service-card reveal reveal-${index + 2}`}
-            >
-              <div className="service-number">0{index + 1}</div>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-            </article>
-          ))}
+        <div className="hero-actions reveal reveal-2">
+          <a href="/process" className="btn btn-secondary">
+            Explore the Process
+          </a>
         </div>
       </section>
 
-      <section className="approach section" id="approach">
-        <div className="approach-layout">
-          <div className="approach-left reveal reveal-1">
-            <span className="section-kicker">Approach</span>
-            <h2>
-              Goal Oriented Relationships:
-              <span>
-                {" "}
-                Empathy, honesty, and accountability produce measurable
-                results.
-              </span>
-            </h2>
-            <p>
-              It&apos;s a built in feature: We know our clients and learn what
-              they&apos;re truly seeking. The client-consultant relationship
-              creates intrinsic value and motivation resilient against extrinsic
-              circumstances.
-            </p>
-
-            <ul className="outcomes-list">
-              {outcomes.map((item, index) => (
-                <li
-                  key={item}
-                  className={`reveal reveal-${(index % 3) + 2}`}
-                >
-                  <span className="check-dot" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="approach-right">
-            {process.map((item, index) => (
-              <article
-                key={item.step}
-                className={`process-card reveal reveal-${index + 2}`}
-              >
-                <span className="process-step">{item.step}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="results section" id="results">
-        <div className="section-heading narrow reveal reveal-1">
-          <span className="section-kicker">Results</span>
-          <h2>What this work is meant to change.</h2>
+      <section className="services section">
+        <div className="section-heading reveal reveal-1">
+          <span className="section-kicker">About</span>
+          <h2>Meet the coach behind the work.</h2>
           <p>
-            Better planning. Better execution. Better self-management. Stronger
-            performance without relying on chaos, overwork, or constant
-            recovery.
+            People choose Stephen Bozeman for clarity, structure, and honest accountability.
+            His approach goes beyond conversation and focuses on building systems that actually
+            improve how clients think, work, and perform. The result is more consistency, less
+            overwhelm, and a more sustainable way to operate at a high level.
           </p>
         </div>
 
-        <div className="results-grid">
-          <div className="result-panel large reveal reveal-2">
-            <span className="result-label">Strategic Clarity</span>
-            <h3>Know what matters, when it matters.</h3>
-            <p>
-              Create a more deliberate approach to priorities, boundaries, and
-              decision-making so your attention stops getting hijacked by every
-              incoming demand.
-            </p>
-          </div>
-
-          <div className="result-panel reveal reveal-3">
-            <span className="result-label">Consistent Execution</span>
-            <h3>Do the work you know you need to do.</h3>
-            <p>
-              Replace drift and inconsistency with systems that help you
-              initiate, organize, and follow through.
-            </p>
-          </div>
-
-          <div className="result-panel reveal reveal-4">
-            <span className="result-label">Resilient Performance</span>
-            <h3>Perform at a high level without running yourself into the ground.</h3>
-            <p>
-              Build a more sustainable rhythm that supports both ambition and
-              long-term effectiveness.
-            </p>
-          </div>
+        <div className="hero-actions reveal reveal-2">
+          <a href="/about" className="btn btn-primary">
+            About Me
+          </a>
         </div>
       </section>
 
@@ -565,11 +253,6 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="cta-footer">
-            <span>Houston</span>
-            <span className="footer-divider" />
-            <span>Austin</span>
-          </div>
         </div>
       </section>
     </main>
