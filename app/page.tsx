@@ -55,7 +55,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={`page ${loaded ? "page-loaded" : ""}`}>
+    <main className={`page home-light ${loaded ? "page-loaded" : ""}`}>
       <div className="page-glow page-glow-one" />
       <div className="page-glow page-glow-two" />
       <div className="grid-lines" />

@@ -1436,3 +1436,234 @@ button {
     transform: translateY(0);
   }
 }
+
+.process-page-light {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(165, 182, 131, 0.22), transparent 34%),
+    linear-gradient(135deg, #f5f7ee 0%, #e8eddd 100%);
+  color: #102015;
+}
+
+.process-page-light .site-header {
+  background: rgba(245, 247, 238, 0.88);
+  border: 1px solid rgba(95, 105, 75, 0.18);
+  box-shadow: 0 18px 60px rgba(36, 47, 29, 0.08);
+}
+
+.process-page-light .site-header.menu-open,
+.process-page-light .dropdown-nav {
+  background: rgba(245, 247, 238, 0.97);
+}
+
+.process-page-light .menu-toggle {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(95, 105, 75, 0.18);
+}
+
+.process-page-light .menu-toggle span {
+  background: #102015;
+}
+
+.process-page-light .dropdown-nav a {
+  color: rgba(16, 32, 21, 0.82);
+}
+
+.process-page-light .dropdown-nav a:hover {
+  color: #102015;
+  background: rgba(95, 105, 75, 0.08);
+}
+
+.process-light-hero {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 160px 0 100px;
+}
+
+.process-light-shell {
+  padding: clamp(30px, 5vw, 64px);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(95, 105, 75, 0.16);
+  box-shadow: 0 24px 70px rgba(36, 47, 29, 0.08);
+}
+
+.process-light-shell h1,
+.process-light-copy h2 {
+  margin: 0 0 24px;
+  color: #5f694b;
+
+  font-size: 2.4rem !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.04em !important;
+  font-weight: 400 !important;
+}
+
+.process-light-copy {
+  max-width: 860px;
+}
+
+.process-light-copy p {
+  margin: 0 0 28px;
+  color: rgba(16, 32, 21, 0.76);
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.85;
+}
+
+.process-light-copy h2 {
+  margin: 54px 0 24px;
+  color: #5f694b;
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .process-light-hero {
+    width: calc(100% - 20px);
+    padding: 120px 0 70px;
+  }
+
+  .process-light-shell {
+    border-radius: 24px;
+    padding: 26px;
+  }
+
+.process-light-shell h1,
+.process-light-copy h2 {
+  margin: 0 0 24px;
+  color: #5f694b;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+  .process-light-copy p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+/* HOME LIGHT MODE */
+.home-light {
+  background:
+    radial-gradient(circle at top right, rgba(165, 182, 131, 0.18), transparent 40%),
+    linear-gradient(135deg, #f5f7ee 0%, #e8eddd 100%);
+  color: #102015;
+}
+
+/* kill dark overlays */
+.home-light .page-glow,
+.home-light .grid-lines {
+  display: none;
+}
+
+/* header */
+.home-light .site-header {
+  background: rgba(245, 247, 238, 0.9);
+  border: 1px solid rgba(95, 105, 75, 0.18);
+  box-shadow: 0 18px 60px rgba(36, 47, 29, 0.08);
+}
+
+.home-light .site-header.menu-open,
+.home-light .dropdown-nav {
+  background: rgba(245, 247, 238, 0.96);
+}
+
+.home-light .menu-toggle {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(95, 105, 75, 0.2);
+}
+
+.home-light .menu-toggle span {
+  background: #102015;
+}
+
+.home-light .dropdown-nav a {
+  color: rgba(16, 32, 21, 0.82);
+}
+
+.home-light .dropdown-nav a:hover {
+  color: #102015;
+  background: rgba(95, 105, 75, 0.08);
+}
+
+/* hero text */
+.home-light .hero-title {
+  color: #102015;
+}
+
+.home-light .hero-text {
+  color: rgba(16, 32, 21, 0.7);
+}
+
+/* cards */
+.home-light .metric-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(95, 105, 75, 0.14);
+  box-shadow: 0 18px 50px rgba(36, 47, 29, 0.06);
+}
+
+.home-light .metric-label {
+  color: #5f694b;
+}
+
+.home-light .metric-value {
+  color: #102015;
+}
+
+/* buttons */
+.home-light .btn-secondary {
+  background: rgba(255, 255, 255, 0.5);
+  color: #102015;
+  border: 1px solid rgba(95, 105, 75, 0.2);
+}
+
+.home-light .btn-secondary:hover {
+  background: rgba(95, 105, 75, 0.08);
+}
+
+/* fix hidden text on light home */
+.home-light .section-heading h2,
+.home-light .approach-left h2,
+.home-light .cta-panel h2 {
+  color: #102015;
+}
+
+.home-light .section-heading p,
+.home-light .approach-left p,
+.home-light .cta-panel p,
+.home-light .trust-strip p {
+  color: rgba(16, 32, 21, 0.72);
+}
+
+.home-light .section-kicker {
+  color: #5f694b;
+}
+
+.home-light .trust-strip p span {
+  color: #5f694b;
+}
+
+.home-light .trust-line {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(95, 105, 75, 0.28) 50%,
+    transparent 100%
+  );
+}
+
+.home-light .cta-panel {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(95, 105, 75, 0.16);
+  box-shadow: 0 18px 50px rgba(36, 47, 29, 0.08);
+}
+
+.home-light #contact .section-kicker {
+  background: rgba(95, 105, 75, 0.08);
+  border-color: rgba(95, 105, 75, 0.18);
+  color: #5f694b;
+}
